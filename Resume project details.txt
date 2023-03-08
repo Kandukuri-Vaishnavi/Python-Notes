@@ -1,0 +1,45 @@
+Drive Safe Prediction: (Automobile Industry)
+Objective: Our goal is to predict a binary outcome of 1, to indicate safe driver, or 0, to indicate that the drivers' data needs a review.   
+
+Approach :
+
+Performed Data Analysis and Preprocessing.
+ Since Target Variable class is imbalanced applied RandomOverSampler method to balance the class .
+Performed PCA to reduce dimensions
+Applied Classification Machine Learning models, and got 82 % accuracy for Random Forest ML Model.
+Have done Hyperparameter tuning for Random Forest ML model and got accuracy of 84% 
+
+---------------------------------------------------
+Cardio Vascular Disease Prediction (Health care):
+
+Objective :The objective of this research is to build classifiers to predict whether a person has cardiovascular disease based on their medical test, age, and gender also also to identify which test is more reliable in determining cardiovascular disease.
+ Approach :
+Performed EDA and Preprocessing on the Dataset
+Applied Boosting Algorithms and classification models and got 87% accuracy for Decision Tree Machine Learning  Model    
+--------------------------------------------
+Academy Projects: Teen Market Segmentation (Marketing and Analysis) :
+Objective: to identify segments of teenagers who share similar tastes, so that clients can avoid targeting advertisements to teens with no interest in the product being sold.
+Approach : 
+
+To load data into Python, Preprocess, clean and feature engineer.
+To make the unstructured data into useful data for analyzing.
+To form clusters using K-means and hierarchical clustering, and find the patterns, insights of the data.      
+----------------------------------------------------------------
+Wine Quality Prediction :
+Objective:
+
+In industries, understanding the demands of wine safety testing can be a complex task for the laboratory with  numerous analytes and residues to monitor. But, our application's prediction, provide ideal solutions for the analysis of wine, which will make this whole process efficient and cheaper with less human interaction
+
+Approach:
+
+Preprocessed ,cleaned and feature engineered on the data .
+Applied all the classifications models, got better accuracy for Random forest Machine Learning Model with accuracy of 85%.
+Have Performed Hyperparameter Tuning to get better accuracy .
+
+---------------------------------------------------
+IOT Climate Monitor
+Objective: To find the temperature trend as per seasons / month and forcasting future temperature .
+Approach:Did feature engineering,data analysis and performed Regression algorithms with hyper parametertuning  to validate the model performance.
+
+
+

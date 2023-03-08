@@ -1,0 +1,159 @@
+Why we should scale data set?
+---------------------------------------------
+Scaling the data set before fitting the model is important because it helps ensure that all 
+of the features in the data set contribute equally to the analysis. This is especially important 
+when working with machine learning algorithms that rely on the distance between data points, 
+such as k-nearest neighbors or support vector machines.
+
+If the features in the data set are not scaled, some features with larger values may dominate 
+the algorithm, resulting in a biased analysis. Scaling the data set standardizes the range of values
+
+ for each feature, making them comparable to one another. This allows the algorithm to give equal weight
+ to all features, rather than overemphasizing certain features based on their magnitude.
+
+In addition to improving the accuracy and performance of the algorithm, scaling can also help reduce the
+ impact of outliers and make the model more interpretable. Overall, scaling the data set is a critical step in the machine learning process,
+ as it helps ensure that the model is as accurate and reliable as possible.
+
+absolute max scalar-every value get divided max val in dataset [-1,1]-prone to outlier
+min max scalar= x-xmin/xmax- xmin [0,1] prone to outlier
+normalization-= x-xmean/xmax- xmin when you want to change the shape of ds
+standard scalar- x-xmean/x std (when ds is normal distn)
+robust- x-xmedian/iqr- when ds is skewed
+
+
+                               
+
+
+
+
+
+
+-----------------------------------------------------------------
+why we have to handle  missing values in data set during preprocessing?
+--------------------------------------------------------
+
+Missing completely at random (MCAR)-missed completely by chance no logic
+Missing at random (MAR)-Men are more likely to share age as compared to women. to avoid give range of values 10k-20k
+Missing not at random (MNAR)-Some survey of employees is done. Most of the data that is missing is for the employees who are on sick leaves. 
+
+Handling missing values in a data set is important during preprocessing because missing values 
+can cause issues with the analysis and modeling of the data, leading to inaccurate and unreliable results.
+Some of the reasons why missing values can cause problems include:
+Bias: The presence of missing values can cause bias in the analysis, leading to incorrect conclusions or decisions.
+Reduced sample size: If missing values are simply ignored, the sample size may be reduced, which can result in less accurate models or less reliable statistical tests.
+Inaccurate imputations: If missing values are imputed with inaccurate values, this can introduce noise into the data and affect the accuracy of the analysis.
+Unreliable statistical tests: If missing values are not handled properly, the results of statistical tests can be unreliable.
+Therefore, it is important to handle missing values appropriately during preprocessing to ensure that the data is as accurate and reliable as possible. 
+This can be done through a variety of techniques such as imputing the missing values with an appropriate value, deleting the rows or columns
+ with missing values, or using advanced techniques such as regression imputation or multiple imputation.
+The choice of technique depends on the data set and the type of analysis being performed. 
+However, it is critical to handle missing values appropriately to ensure that the data analysis and modeling is accurate and reliable.
+---------------------------------------------------------------------
+why we have to handle outliers ? 
+Outliers are data points that are significantly different from other observations in the data set. 
+These data points can have a significant impact on the statistical properties of the data set, such as the mean and variance, and can also affect
+ the performance of many machine learning algorithms.
+Therefore, it is important to treat outliers in the data set during preprocessing in
+ order to prevent them from negatively impacting the analysis. There are several ways to treat outliers, including:
+Removing the outlier: One approach is to simply remove the outlier from the data set. However, this approach can result in a loss 
+of valuable information, especially if the outlier represents a rare or unique event that is of interest.
+Replacing the outlier: Another approach is to replace the outlier with a value that is more representative of the data set.
+ For example, the outlier could be replaced with the median or mean of the data set.
+Winsorization: This approach involves capping extreme values at a certain threshold. 
+For example, any values that fall above the 95th percentile or below the 5th percentile can be capped at those values.
+Treating outliers can help improve the accuracy and performance of many machine learning algorithms by ensuring that the 
+data set is representative of the underlying population. It can also prevent biased results, which can occur when an outlier 
+has a disproportionate influence on the analysis. Overall, treating outliers is an important step in the data preprocessing phase of any analysis.
+------------------------------------------------------------------------------------------
+WINSORIZATION-A TECHNIQUE TO HANDLE OUTLIER
+------------------------------------------------------------------------------------------------------------
+Winsorization is a data preprocessing technique that involves capping extreme values at a certain threshold. 
+This technique is useful for handling outliers that are particularly extreme and can have a significant impact on the statistical properties of the data set. 
+By capping the extreme values, Winsorization can help to improve the accuracy and robustness of statistical analyses and machine learning models.
+There are two main types of Winsorization: "Min-Max" Winsorization and "Percentile" Winsorization. 
+In Min-Max Winsorization, the extreme values are replaced with the maximum or minimum values in the data set. 
+For example, if a data set contains values ranging from 0 to 100 and an extreme value of 200, the extreme value would be replaced 
+with 100 (the maximum value in the data set). This type of Winsorization can be useful for handling extreme values that are unlikely 
+to be errors, but still have a disproportionate impact on the analysis.
+In Percentile Winsorization, the extreme values are replaced with the values at a certain percentile of the data set. For example, if the 99th 
+percentile of a data set is 100, any values above 100 would be replaced with 100. This type of Winsorization can be useful for handling extreme
+ values that are likely to be errors or outliers.
+Winsorization can be an effective technique for handling outliers in a data set, but it is important to choose the appropriate 
+threshold for capping the extreme values. Choosing too high a threshold can result in a loss of information, while choosing too low a threshold
+ may not effectively handle the outliers. Additionally, it is important to consider the context of the analysis and the goals of the study when 
+deciding whether to use Winsorization and how to implement it.
+--------------------------------
+why we have to encode categorical variables ?
+Categorical variables are variables that have a limited number of possible values, often representing different categories or groups.
+ For example, a categorical variable could be the color of a car, with the possible values being "red," "blue," "green," etc.
+To use categorical variables in machine learning models, they need to be converted into numerical values. 
+This process is known as "encoding," and it is necessary because most machine learning algorithms are designed to work with numerical data.
+There are different methods of encoding categorical variables, such as:
+One-hot encoding: This is a method where a binary variable is created for each possible value of the categorical variable.
+ For example, if the categorical variable is the color of a car, one-hot encoding would create a binary variable for each possible color, 
+with a value of 1 indicating the presence of that color and 0 indicating its absence.
+Label encoding: This is a method where each category is assigned a unique numerical value. 
+For example, if the categorical variable is the color of a car, label encoding might assign the values 1, 2, and 3 to the colors red, blue, and green, respectively.
+The reason for encoding categorical variables is that machine learning algorithms are typically based on mathematical equations that involve numerical values.
+ If we were to use the raw categorical data as input to a machine learning algorithm, the algorithm wouldn't be able to interpret it properly.
+ By encoding categorical variables, we can ensure that the algorithm can process the data accurately and make meaningful predictions or classifications.
+It's important to note that the choice of encoding method can have an impact on the performance of the machine learning model,
+ so it's important to choose an appropriate method based on the nature of the data and the specific requirements of the problem at hand.
+----------------------------------------------
+what is curse of dimentionality?
+Curse of dimensionality refers to the scenario where the exponential rise in the number of features leads to an decrease in model’s performance.
+This is due to the fact that it is difficult to design models in higher dimensional space. (Imagine a space with 500 dimensions!)
+Also, higher dimensions mean more information for the model to work on which increases the processing time involved and it 
+also means more noise and redundancy in the dataset which makes the model erroneous. +...
+-------------------------------------------------------------------------------------------------------------------
+decision tree algorithrm?
+A decision tree is a type of supervised machine learning algorithm that is used for classification and regression analysis.
+ It works by recursively partitioning the input data into smaller subsets based on a set of decision rules.
+Here's how the decision tree algorithm works:
+Data preprocessing: First, the input data is preprocessed by cleaning, transforming, and selecting relevant features.
+Choosing the split criteria: The algorithm selects the best split criteria for the first node of the decision tree. 
+The split criteria should be able to maximize the separation of classes in the resulting subsets.
+Recursive splitting: After the first split, the algorithm recursively applies the split criteria to each subset, 
+until all the subsets are pure (i.e., contain only one class) or a maximum depth is reached.
+Pruning: After the decision tree is constructed, it is evaluated for overfitting by pruning some of the branches of the tree. 
+This helps to avoid overfitting, which occurs when the decision tree fits the training data too closely and cannot generalize well to new data.
+Prediction: Once the decision tree is constructed, it can be used to predict the class or value of a new data point by following the decision
+ rules from the root node to the leaf node that corresponds to the predicted class or value.
+In summary, the decision tree algorithm is a simple yet powerful machine learning algorithm that can be used for
+ both classification and regression tasks. Its key advantage is its interpretability, as the decision tree can be easily visualized and understood by humans. 
+However, it can be prone to overfitting and may not perform well on complex datasets.
+GINI=P1^2+PZ^2+..........
+GINI INDEX=1GINI
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------
+
+lms new portal 
+https://lms.learnbay.co/myaccount/#/course/64922/lesson/562624?lesson=562624&lesson_type=material&section=182865&subject=185126
+------------------------------------------------------------
+lms old portal
+https://www.learnbay-lms.com/users/sign_in
+-------------------------------------------------------
+24 april drive link
+https://drive.google.com/drive/folders/1sOjMPs5OoSwCogeBdmJsRcpaw4yEwVYF?usp=sharing 
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
